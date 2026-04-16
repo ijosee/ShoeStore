@@ -64,7 +64,8 @@ async function fetchDashboardStats(
   // Sales by store
   const storeMap = new Map<string, { store_name: string; total: number; count: number }>();
   for (const sale of salesToday ?? []) {
-    const name = (sale.stores as { name: string } | null)?.name ?? 'Desconocida';
+    const storeData = sale.stores as unknown as { name: string } | { name: string }[] | null;
+    const name = Array.isArray(storeData) ? (storeData[0]?.name ?? 'Desconocida') : (storeData?.name ?? 'Desconocida');
     const existing = storeMap.get(sale.store_id) ?? { store_name: name, total: 0, count: 0 };
     existing.total += Number(sale.total);
     existing.count += 1;
