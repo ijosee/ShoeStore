@@ -47,7 +47,7 @@ export function TopBar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 flex h-14 items-center gap-3 border-b bg-background px-4">
+    <header className="sticky top-0 z-40 flex h-14 items-center gap-3 border-b border-white/[0.08] bg-[oklch(0.14_0.025_220)] px-4 backdrop-blur-xl">
       {/* Mobile hamburger */}
       <Button
         variant="ghost"

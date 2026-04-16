@@ -32,9 +32,9 @@ export default function DashboardLayout({
   // Show a minimal loading state while auth initializes
   if (isLoading) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="flex flex-col items-center gap-2">
-          <div className="size-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      <div className="flex h-screen items-center justify-center bg-[oklch(0.16_0.02_220)]">
+        <div className="flex flex-col items-center gap-3">
+          <div className="size-10 animate-spin rounded-full border-4 border-primary/30 border-t-primary" />
           <span className="text-sm text-muted-foreground">Cargando...</span>
         </div>
       </div>
@@ -54,12 +54,12 @@ export default function DashboardLayout({
         <TopBar />
         <div className="flex flex-1 overflow-hidden">
           {/* Desktop sidebar */}
-          <aside className="hidden w-60 shrink-0 overflow-y-auto border-r bg-sidebar lg:block">
+          <aside className="hidden w-60 shrink-0 overflow-y-auto border-r border-white/[0.06] bg-[oklch(0.13_0.025_220)] lg:block">
             <Sidebar />
           </aside>
 
           {/* Main content */}
-          <main className="flex-1 overflow-y-auto p-4 md:p-6">
+          <main className="flex-1 overflow-y-auto bg-gradient-to-br from-background via-background to-[oklch(0.18_0.03_200)] p-4 md:p-6">
             {children}
           </main>
         </div>
